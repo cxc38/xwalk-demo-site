@@ -16,7 +16,7 @@
       "cards",
       "columns",
       "fragment",
-      "multifield-container-component"
+      "conditionally-revealed-component"
     ]
   },
   {
