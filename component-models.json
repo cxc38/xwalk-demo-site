@@ -216,6 +216,54 @@
     ]
   },
   {
+    "id": "conditionally-revealed-component",
+    "fields": [
+      {
+        "component": "boolean",
+        "label": "Shall the container field be revealed?",
+        "name": "reveal",
+        "valueType": "boolean"
+      },
+      {
+        "component": "container",
+        "label": "Container",
+        "name": "container",
+        "valueType": "string",
+        "collapsible": false,
+        "condition": { "===": [{"var" : "reveal"}, true] },
+        "multi": true,
+        "fields": [
+          {
+            "component": "text-input",
+            "label": "Simple Text 1",
+            "name": "text",
+            "valueType": "string"
+          },
+          {
+            "component": "text-input",
+            "label": "Simple Text 2",
+            "name": "text2",
+            "valueType": "string"
+          }
+        ]
+      },
+      {
+        "component": "text",
+        "label": "Hidden text field",
+        "name": "hidden-text-1",
+        "valueType": "string",
+        "condition": { "===": [{"var" : "reveal"}, true] }
+      },
+      {
+        "component": "reference",
+        "name": "theImage1",
+        "label": "theImage-1 URL",
+        "multi": false,
+        "condition": { "===": [{"var" : "reveal"}, false] }
+      }
+    ]
+  },
+  {
     "id": "multifield-container-component",
     "fields": [
       {
